@@ -10,41 +10,45 @@ public enum Emotion
     Anxius
 }
 
-public class Npc : MonoBehaviour
+public class Npc
 {
-    public string NpcName;
-    public Emotion Emotion;
-    public string Dialog;
+    private string npcName;
+    private Emotion emotion;
+    private string dialog;
 
-    public void Set(string npcName, Emotion emotion, string dialog)
+    public Npc(string _npcName, Emotion _emotion, string _dialog)
     {
-        NpcName = npcName;
-        Emotion = emotion;
-        Dialog = dialog;
+        npcName = _npcName;
+        emotion = _emotion;
+        dialog = _dialog;
 
     }
     public void Talk()
     {
-        print("Hola me llamo " + NpcName + "Me siento ... " + Emotion + " Queria decirte que " + Dialog);
+        Debug.Log("Hola me llamo " + npcName + "Me siento ... " + emotion + " Queria decirte que " + dialog);
     }
     public void Talk(string newNpcName)
     {
-        NpcName = newNpcName;
-        print("Hola me llamo " + NpcName + "Me siento ... " + Emotion + " Queria decirte que " + Dialog);
+        npcName = newNpcName;
+        Debug.Log("Hola me llamo " + npcName + "Me siento ... " + emotion + " Queria decirte que " + dialog);
     }
     public void Talk(string newNpcName, Emotion newEmotion)
     {
-        NpcName = newNpcName;
-        Emotion = newEmotion;
+        npcName = newNpcName;
+        emotion = newEmotion;
 
-        print("Hola me llamo " + NpcName + "Me siento ... " + Emotion + " Queria decirte que " + Dialog);
+        Debug.Log("Hola me llamo " + npcName + "Me siento ... " + emotion + " Queria decirte que " + dialog);
     }
     public void Talk(string newNpcName, Emotion newEmotion, string newDialog)
     {
-        NpcName = newNpcName;
-        Emotion = newEmotion;
-        Dialog = newDialog;
+        npcName = newNpcName;
+        emotion = newEmotion;
+        dialog = newDialog;
 
-        print("Hola me llamo " + NpcName + "Me siento ... " + Emotion + " Queria decirte que " + Dialog);
+        Debug.Log("Hola me llamo " + npcName + "Me siento ... " + emotion + " Queria decirte que " + dialog);
     }
+
+    public string NpcName => npcName;
+    public Emotion Emotion => emotion;
+    public string Dialog => dialog;
 }
